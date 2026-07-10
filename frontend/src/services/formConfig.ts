@@ -1,0 +1,188 @@
+import { EmployeePayload } from '../types/employee';
+import { FormSection, SelectOption } from '../types/form';
+
+const ratingOptions: SelectOption[] = [
+  { label: '1', value: 1 },
+  { label: '2', value: 2 },
+  { label: '3', value: 3 },
+  { label: '4', value: 4 },
+];
+
+export const defaultEmployee: EmployeePayload = {
+  Age: 35,
+  BusinessTravel: 'Travel_Rarely',
+  DailyRate: 1100,
+  Department: 'Sales',
+  DistanceFromHome: 5,
+  Education: 3,
+  EducationField: 'Marketing',
+  EmployeeCount: 1,
+  EmployeeNumber: 1001,
+  EnvironmentSatisfaction: 3,
+  Gender: 'Male',
+  HourlyRate: 70,
+  JobInvolvement: 3,
+  JobLevel: 2,
+  JobRole: 'Sales Executive',
+  JobSatisfaction: 3,
+  MaritalStatus: 'Single',
+  MonthlyIncome: 6000,
+  MonthlyRate: 18000,
+  NumCompaniesWorked: 2,
+  Over18: 'Y',
+  OverTime: 'Yes',
+  PercentSalaryHike: 12,
+  PerformanceRating: 3,
+  RelationshipSatisfaction: 3,
+  StandardHours: 80,
+  StockOptionLevel: 0,
+  TotalWorkingYears: 8,
+  TrainingTimesLastYear: 2,
+  WorkLifeBalance: 2,
+  YearsAtCompany: 5,
+  YearsInCurrentRole: 3,
+  YearsSinceLastPromotion: 1,
+  YearsWithCurrManager: 3,
+};
+
+export const formSections: FormSection[] = [
+  {
+    title: 'Personal Information',
+    description: 'Baseline demographic and employee record attributes.',
+    fields: [
+      { name: 'Age', label: 'Age', type: 'slider', min: 18, max: 70 },
+      {
+        name: 'Gender',
+        label: 'Gender',
+        type: 'radio',
+        options: [
+          { label: 'Female', value: 'Female' },
+          { label: 'Male', value: 'Male' },
+        ],
+      },
+      {
+        name: 'MaritalStatus',
+        label: 'Marital Status',
+        type: 'select',
+        options: [
+          { label: 'Divorced', value: 'Divorced' },
+          { label: 'Married', value: 'Married' },
+          { label: 'Single', value: 'Single' },
+        ],
+      },
+      { name: 'Education', label: 'Education Level', type: 'slider', min: 1, max: 5 },
+      {
+        name: 'EducationField',
+        label: 'Education Field',
+        type: 'select',
+        options: [
+          { label: 'Human Resources', value: 'Human Resources' },
+          { label: 'Life Sciences', value: 'Life Sciences' },
+          { label: 'Marketing', value: 'Marketing' },
+          { label: 'Medical', value: 'Medical' },
+          { label: 'Other', value: 'Other' },
+          { label: 'Technical Degree', value: 'Technical Degree' },
+        ],
+      },
+      { name: 'EmployeeNumber', label: 'Employee Number', type: 'number', min: 0 },
+      { name: 'EmployeeCount', label: 'Employee Count', type: 'number', min: 0 },
+      {
+        name: 'Over18',
+        label: 'Over 18',
+        type: 'select',
+        options: [{ label: 'Yes', value: 'Y' }],
+      },
+    ],
+  },
+  {
+    title: 'Job Information',
+    description: 'Role, department, level, travel, and tenure details.',
+    fields: [
+      {
+        name: 'Department',
+        label: 'Department',
+        type: 'select',
+        options: [
+          { label: 'Human Resources', value: 'Human Resources' },
+          { label: 'Research & Development', value: 'Research & Development' },
+          { label: 'Sales', value: 'Sales' },
+        ],
+      },
+      {
+        name: 'JobRole',
+        label: 'Job Role',
+        type: 'select',
+        options: [
+          { label: 'Healthcare Representative', value: 'Healthcare Representative' },
+          { label: 'Human Resources', value: 'Human Resources' },
+          { label: 'Laboratory Technician', value: 'Laboratory Technician' },
+          { label: 'Manager', value: 'Manager' },
+          { label: 'Manufacturing Director', value: 'Manufacturing Director' },
+          { label: 'Research Director', value: 'Research Director' },
+          { label: 'Research Scientist', value: 'Research Scientist' },
+          { label: 'Sales Executive', value: 'Sales Executive' },
+          { label: 'Sales Representative', value: 'Sales Representative' },
+        ],
+      },
+      {
+        name: 'BusinessTravel',
+        label: 'Business Travel',
+        type: 'select',
+        options: [
+          { label: 'Non-Travel', value: 'Non-Travel' },
+          { label: 'Travel Frequently', value: 'Travel_Frequently' },
+          { label: 'Travel Rarely', value: 'Travel_Rarely' },
+        ],
+      },
+      { name: 'JobLevel', label: 'Job Level', type: 'slider', min: 1, max: 5 },
+      { name: 'DistanceFromHome', label: 'Distance From Home', type: 'slider', min: 0, max: 40 },
+      { name: 'TotalWorkingYears', label: 'Total Working Years', type: 'slider', min: 0, max: 45 },
+      { name: 'YearsAtCompany', label: 'Years At Company', type: 'slider', min: 0, max: 45 },
+      { name: 'YearsInCurrentRole', label: 'Years In Current Role', type: 'slider', min: 0, max: 20 },
+      { name: 'YearsSinceLastPromotion', label: 'Years Since Last Promotion', type: 'slider', min: 0, max: 20 },
+      { name: 'YearsWithCurrManager', label: 'Years With Current Manager', type: 'slider', min: 0, max: 20 },
+    ],
+  },
+  {
+    title: 'Compensation',
+    description: 'Pay structure and stock option indicators.',
+    fields: [
+      { name: 'MonthlyIncome', label: 'Monthly Income', type: 'number', min: 0 },
+      { name: 'MonthlyRate', label: 'Monthly Rate', type: 'number', min: 0 },
+      { name: 'DailyRate', label: 'Daily Rate', type: 'number', min: 0 },
+      { name: 'HourlyRate', label: 'Hourly Rate', type: 'number', min: 0 },
+      { name: 'PercentSalaryHike', label: 'Salary Hike %', type: 'slider', min: 0, max: 40 },
+      { name: 'StockOptionLevel', label: 'Stock Option Level', type: 'slider', min: 0, max: 3 },
+    ],
+  },
+  {
+    title: 'Work Environment',
+    description: 'Satisfaction, workload, and work-life signals.',
+    fields: [
+      { name: 'EnvironmentSatisfaction', label: 'Environment Satisfaction', type: 'select', options: ratingOptions },
+      { name: 'JobSatisfaction', label: 'Job Satisfaction', type: 'select', options: ratingOptions },
+      { name: 'RelationshipSatisfaction', label: 'Relationship Satisfaction', type: 'select', options: ratingOptions },
+      { name: 'WorkLifeBalance', label: 'Work Life Balance', type: 'select', options: ratingOptions },
+      { name: 'JobInvolvement', label: 'Job Involvement', type: 'select', options: ratingOptions },
+      {
+        name: 'OverTime',
+        label: 'Overtime',
+        type: 'switch',
+        options: [
+          { label: 'No', value: 'No' },
+          { label: 'Yes', value: 'Yes' },
+        ],
+      },
+      { name: 'NumCompaniesWorked', label: 'Companies Worked', type: 'slider', min: 0, max: 10 },
+      { name: 'TrainingTimesLastYear', label: 'Training Times Last Year', type: 'slider', min: 0, max: 10 },
+      { name: 'StandardHours', label: 'Standard Hours', type: 'number', min: 0 },
+    ],
+  },
+  {
+    title: 'Performance',
+    description: 'Current performance rating and organization signals.',
+    fields: [
+      { name: 'PerformanceRating', label: 'Performance Rating', type: 'select', options: ratingOptions },
+    ],
+  },
+];

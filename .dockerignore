@@ -1,0 +1,14 @@
+.git
+.agents
+.venv
+venv
+env
+__pycache__
+*.pyc
+.ipynb_checkpoints
+node_modules
+frontend/node_modules
+frontend/dist
+*.log
+.env
+backend/.env

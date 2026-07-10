@@ -1,0 +1,50 @@
+{
+  "rows": 1470,
+  "columns": 35,
+  "overall_attrition_rate_pct": 16.12,
+  "overtime": [
+    {
+      "OverTime": "No",
+      "employees": 1054,
+      "attrition_rate": 0.10436432637571158,
+      "attritions": 110,
+      "attrition_rate_pct": 10.436432637571158
+    },
+    {
+      "OverTime": "Yes",
+      "employees": 416,
+      "attrition_rate": 0.30528846153846156,
+      "attritions": 127,
+      "attrition_rate_pct": 30.528846153846157
+    }
+  ],
+  "model_rows": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.78,
+      "precision": 0.38,
+      "recall": 0.42,
+      "f1": 0.4,
+      "rocAuc": 0.73,
+      "prAuc": 0.36
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.82,
+      "precision": 0.44,
+      "recall": 0.46,
+      "f1": 0.45,
+      "rocAuc": 0.76,
+      "prAuc": 0.42
+    },
+    {
+      "model": "XGBoost",
+      "accuracy": 0.83,
+      "precision": 0.47,
+      "recall": 0.49,
+      "f1": 0.48,
+      "rocAuc": 0.78,
+      "prAuc": 0.44
+    }
+  ]
+}

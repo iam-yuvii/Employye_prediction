@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "Employee Attrition Prediction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Root",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/"
+      }
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Predict",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Age\": 35,\n  \"BusinessTravel\": \"Travel_Rarely\",\n  \"DailyRate\": 1100,\n  \"Department\": \"Sales\",\n  \"DistanceFromHome\": 5,\n  \"Education\": 3,\n  \"EducationField\": \"Marketing\",\n  \"EmployeeCount\": 1,\n  \"EmployeeNumber\": 1001,\n  \"EnvironmentSatisfaction\": 3,\n  \"Gender\": \"Male\",\n  \"HourlyRate\": 70,\n  \"JobInvolvement\": 3,\n  \"JobLevel\": 2,\n  \"JobRole\": \"Sales Executive\",\n  \"JobSatisfaction\": 3,\n  \"MaritalStatus\": \"Single\",\n  \"MonthlyIncome\": 6000,\n  \"MonthlyRate\": 18000,\n  \"NumCompaniesWorked\": 2,\n  \"Over18\": \"Y\",\n  \"OverTime\": \"Yes\",\n  \"PercentSalaryHike\": 12,\n  \"PerformanceRating\": 3,\n  \"RelationshipSatisfaction\": 3,\n  \"StandardHours\": 80,\n  \"StockOptionLevel\": 0,\n  \"TotalWorkingYears\": 8,\n  \"TrainingTimesLastYear\": 2,\n  \"WorkLifeBalance\": 2,\n  \"YearsAtCompany\": 5,\n  \"YearsInCurrentRole\": 3,\n  \"YearsSinceLastPromotion\": 1,\n  \"YearsWithCurrManager\": 3\n}"
+        },
+        "url": "{{base_url}}/predict"
+      }
+    },
+    {
+      "name": "Explain",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Age\": 35,\n  \"BusinessTravel\": \"Travel_Rarely\",\n  \"DailyRate\": 1100,\n  \"Department\": \"Sales\",\n  \"DistanceFromHome\": 5,\n  \"Education\": 3,\n  \"EducationField\": \"Marketing\",\n  \"EmployeeCount\": 1,\n  \"EmployeeNumber\": 1001,\n  \"EnvironmentSatisfaction\": 3,\n  \"Gender\": \"Male\",\n  \"HourlyRate\": 70,\n  \"JobInvolvement\": 3,\n  \"JobLevel\": 2,\n  \"JobRole\": \"Sales Executive\",\n  \"JobSatisfaction\": 3,\n  \"MaritalStatus\": \"Single\",\n  \"MonthlyIncome\": 6000,\n  \"MonthlyRate\": 18000,\n  \"NumCompaniesWorked\": 2,\n  \"Over18\": \"Y\",\n  \"OverTime\": \"Yes\",\n  \"PercentSalaryHike\": 12,\n  \"PerformanceRating\": 3,\n  \"RelationshipSatisfaction\": 3,\n  \"StandardHours\": 80,\n  \"StockOptionLevel\": 0,\n  \"TotalWorkingYears\": 8,\n  \"TrainingTimesLastYear\": 2,\n  \"WorkLifeBalance\": 2,\n  \"YearsAtCompany\": 5,\n  \"YearsInCurrentRole\": 3,\n  \"YearsSinceLastPromotion\": 1,\n  \"YearsWithCurrManager\": 3\n}"
+        },
+        "url": "{{base_url}}/explain"
+      }
+    },
+    {
+      "name": "Model Info",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/model-info"
+      }
+    }
+  ]
+}
