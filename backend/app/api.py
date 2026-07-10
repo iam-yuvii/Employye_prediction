@@ -27,15 +27,12 @@ def get_model_bundle(request: Request) -> ModelBundle:
     return request.app.state.model_bundle
 
 
-@router.get("/", response_model=RootResponse)
+@router.get("/api", response_model=RootResponse)
 def root() -> RootResponse:
-    """Return API project status."""
-
     return RootResponse(
         project="Employee Attrition Prediction API",
         status="Running",
     )
-
 
 @router.get("/health", response_model=HealthResponse)
 def health() -> HealthResponse:
